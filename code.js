@@ -46,8 +46,8 @@ const setTemp = (place, weatherData) => {
 
   const wallPaper = document.getElementById('wall-paper');
   const placePic = document.getElementById('place-pic');
-  wallPaper.src = `./assets/prefectures/${place.toLowerCase()}.jpg`
-  placePic.src = `./assets/prefectures/${place.toLowerCase()}.jpg`
+  wallPaper.src = `./assets/prefectures/${place.toLowerCase()}.webp`
+  placePic.src = `./assets/prefectures/${place.toLowerCase()}.webp`
 
   for (let i = 0; i < 4; i++) {
     const date = document.getElementById(`date${i}`);
