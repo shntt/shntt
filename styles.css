@@ -1,0 +1,458 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.app {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw
+}
+
+.app-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.app-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.app-background img {
+    height: 110vh;
+    width: 110vw;
+    object-fit: cover;
+    filter: blur(20px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-title {
+    height: 90vh;
+    width: 200px;
+    gap: 10px;
+    border: solid;
+    color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0.3);
+    border-width: 0 1px 0 0;
+    margin-left: 50px;
+    padding-right: 0px;
+}
+
+.app-title p {
+    font-size: 40px;
+    padding-top: 20px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.app-title li {
+    line-height: 40px;
+    font-size: 25px;
+    list-style: none;
+    position: relative;
+}
+
+.app-title a {
+    text-decoration: none;
+    color: white;
+}
+
+.app-title li.link-weather .news-page::before {
+    top: 56.5px;
+}
+
+.link-weather {
+    opacity: 1;
+    padding-bottom: 0px;
+}
+
+
+.link-news {
+    opacity: 0.7;
+}
+
+.weather-app {
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.weather-app-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.weather-app-title img {
+    height: 20px;
+    width: auto;
+    padding-left: 5px;
+}
+
+.weather-app-title h2 {
+    font-size: 50px;
+    color: rgb(126, 126, 126);
+}
+
+.place-and-map {
+    height: 600px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-width: 0px;
+    border-radius: 20pt;
+    padding: 0px;
+    backdrop-filter: blur(20px) opacity(100%) brightness(100%);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+}
+
+.place {
+    height: 600px;
+    width: 400px;
+    border-radius: 20pt;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.place img {
+    height: 600px;
+    width: 400px;
+    border-radius: 20pt;
+    object-fit: cover;
+    filter: opacity(90%);
+    z-index: 0;
+}
+
+.place::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20pt;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.place-temp {
+    position: absolute;
+    height: 550px;
+    width: 336px;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: cemter;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.place-and-temp {
+    width: 336px;
+}
+
+.place h2 {
+    font-size: 80px;
+    padding-bottom: 8px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.place p {
+    font-size: 40px;
+}
+
+.symbols {
+    opacity: 0.8;
+    font-size: 30px;
+    padding-left: 3px;
+}
+
+.hourly-temps {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.place-temp .line {
+    content: '';
+    width: 336px;
+    border: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-width: 0 0 2px 0;
+    position: absolute;
+    z-index: 0;
+    bottom: 79.1px;
+}
+
+.place-temp .dot {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.dot-frame {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.place-temp .current-dot {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-width: 1px;
+    ;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.hours {
+    width: 336px;
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 1;
+    gap: 6px
+}
+
+.hour-and-temp {
+    display: flex;
+    flex-direction: column;
+    width: 77px;
+    align-items: center;
+}
+
+.hour {
+    opacity: 0.8;
+}
+
+.hourly-temp {
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.month {
+    opacity: 0.6;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.max-temp {
+    opacity: 0.9;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: rgb(255, 194, 194);
+}
+
+.min-temp {
+    opacity: 0.9;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(194, 235, 255);
+    padding-bottom: 10px;
+}
+
+.rain-prob {
+    opacity: 0.8;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.japan-map {
+    width: 600px;
+    height: 610px;
+    padding: 0px;
+    border-width: 1px;
+    border-radius: 20pt;
+    color: rgb(232, 232, 232);
+    position: relative;
+    /* box-shadow:
+        3px 3px rgb(248, 248, 248),
+        -3px -3px rgb(248, 248, 248); */
+}
+
+.japan-map img {
+    height: 450px;
+    width: 400px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 3vh;
+    left: 0;
+    margin: auto;
+}
+
+#jpmap {
+    filter: invert();
+    opacity: 0.6;
+}
+
+#jpmap-frame {
+    padding-left: 40px;
+    padding-top: 170px;
+    opacity: 0.3;
+}
+
+#jpmap-okinawa {
+    filter: invert();
+    opacity: 0.6;
+    padding-left: 60px;
+    padding-top: 170px;
+}
+
+.prefecture {
+    height: 30px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-width: 0px;
+    border-radius: 18pt;
+    padding: 18px;
+    background-color: rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.prefecture.selected {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.prefecture:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prefecture h3 {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding: 0px;
+    font-size: 15px;
+}
+
+.prefecture p {
+    margin: 0px;
+    padding: 0px;
+    width: 100px;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.current-weather-icon img {
+    height: 40px;
+    width: 40px;
+    border: none;
+    object-fit: cover;
+    filter: invert(1);
+    opacity: 1;
+    padding: 0px;
+    margin: 5px 0px 0px 0px;
+    position: unset;
+}
+
+#pref-sapporo {
+    position: absolute;
+    left: 230px;
+    top: 75px;
+}
+
+#pref-sendai {
+    position: absolute;
+    right: 70px;
+    top: 205px;
+}
+
+#pref-tokyo {
+    position: absolute;
+    right: 90px;
+    top: 295px;
+}
+
+#pref-yokohama {
+    position: absolute;
+    right: 57px;
+    bottom: 160px;
+}
+
+#pref-nagoya {
+    position: absolute;
+    right: 185px;
+    bottom: 130px;
+}
+
+#pref-osaka {
+    position: absolute;
+    right: 310px;
+    bottom: 95px;
+}
+
+#pref-kyoto {
+    position: absolute;
+    left: 160px;
+    top: 240px;
+}
+
+#pref-fukuoka {
+    position: absolute;
+    left: 30px;
+    top: 290px;
+}
+
+#pref-kagoshima {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+}
+
+#pref-okinawa {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+}

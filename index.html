@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>API Visualizer</title>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='./styles.css'>
+  <script src='code.js'></script>
+</head>
+
+<body>
+  <div class='app'>
+
+    <div class='app-title'>
+      <div id="page-dot"></div>
+      <p>API Viz</p>
+      <ul>
+        <li class='link-weather' id="weather-switch">Weather</li>
+        <li class='link-news' id="news-switch">News</li>
+      </ul>
+    </div>
+
+    <div class='weather-app'>
+      <div class='place-and-map'>
+        <div class='place'>
+          <div class='place-temp'>
+            <div class='place-and-temp'>
+              <h2 id='place-name'></h2>
+              <p><span id='place-current-temp'></span><span class='symbols'>℃ /</span>
+                <span id='place-current-prob'></span><span class='symbols'>%</span></p>
+            </div>
+            <div class='hourly-temps'>
+              <div class='hours'>
+                <div class='hour-and-temp'>
+                  <div class='month' id='month0'></div>
+                  <div class='date' id='date0'></div>
+                  <div class='dot-frame'>
+                    <div class='current-dot'></div>
+                  </div>
+                  <div class='max-temp' id='max0'></div>
+                  <div class='min-temp' id='min0'></div>
+                  <div class='rain-prob' id='prob0'></div>
+                </div>
+                <div class='hour-and-temp'>
+                  <div class='month' id='month1'></div>
+                  <div class='date' id='date1'></div>
+                  <div class='dot-frame'>
+                    <div class='dot'></div>
+                  </div>
+                  <div class='max-temp' id='max1'></div>
+                  <div class='min-temp' id='min1'></div>
+                  <div class='rain-prob' id='prob1'></div>
+                </div>
+                <div class='hour-and-temp'>
+                  <div class='month' id='month2'></div>
+                  <div class='date' id='date2'></div>
+                  <div class='dot-frame'>
+                    <div class='dot'></div>
+                  </div>
+                  <div class='max-temp' id='max2'></div>
+                  <div class='min-temp' id='min2'></div>
+                  <div class='rain-prob' id='prob2'></div>
+                </div>
+                <div class='hour-and-temp'>
+                  <div class='month' id='month3'></div>
+                  <div class='date' id='date3'></div>
+                  <div class='dot-frame'>
+                    <div class='dot'></div>
+                  </div>
+                  <div class='max-temp' id='max3'></div>
+                  <div class='min-temp' id='min3'></div>
+                  <div class='rain-prob' id='prob3'></div>
+                </div>
+              </div>
+              <div class='line'></div>
+            </div>
+          </div>
+          <img src='' id="place-pic">
+        </div>
+        <div class='japan-map'>
+          <img id='jpmap' src='./assets/map/map1.png' alt=''>
+          <img id='jpmap-okinawa' src='./assets/map/map2.png' alt=''>
+          <img id='jpmap-frame' src='./assets/map/map3.png' alt=''>
+
+          <div class='prefecture' id='pref-sapporo'>
+            <div class='prefs-name-and-temp'>
+              <h3>Sapporo</h3>
+              <p><span id="temp-sapporo"></span>℃ / <span id="prob-sapporo"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-sendai'>
+            <div class='prefs-name-and-temp'>
+              <h3>Sendai</h3>
+              <p><span id="temp-sendai"></span>℃ / <span id="prob-sendai"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-tokyo'>
+            <div class='prefs-name-and-temp'>
+              <h3>Tokyo</h3>
+              <p><span id="temp-tokyo"></span>℃ / <span id="prob-tokyo"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-yokohama'>
+            <div class='prefs-name-and-temp'>
+              <h3 id='pref-yokohama-h3'>Yokohama</h3>
+              <p><span id="temp-yokohama"></span>℃ / <span id="prob-yokohama"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-nagoya'>
+            <div class='prefs-name-and-temp'>
+              <h3>Nagoya</h3>
+              <p><span id="temp-nagoya"></span>℃ / <span id="prob-nagoya"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-osaka'>
+            <div class='prefs-name-and-temp'>
+              <h3>Osaka</h3>
+              <p><span id="temp-osaka"></span>℃ / <span id="prob-osaka"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-kyoto'>
+            <div class='prefs-name-and-temp'>
+              <h3>Kyoto</h3>
+              <p><span id="temp-kyoto"></span>℃ / <span id="prob-kyoto"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-kagoshima'>
+            <div class='prefs-name-and-temp'>
+              <h3>Kagoshima</h3>
+              <p><span id="temp-kagoshima"></span>℃ / <span id="prob-kagoshima"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-fukuoka'>
+            <div class='prefs-name-and-temp'>
+              <h3>Fukuoka</h3>
+              <p><span id="temp-fukuoka"></span>℃ / <span id="prob-fukuoka"></span>%</p>
+            </div>
+          </div>
+          <div class='prefecture' id='pref-okinawa'>
+            <div class='prefs-name-and-temp'>
+              <h3>Okinawa</h3>
+              <p><span id="temp-okinawa"></span>℃ / <span id="prob-okinawa"></span>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='app-white-background'>
+  </div>
+
+  <div class='app-background'>
+    <img src='' id="wall-paper">
+  </div>
+</body>
+
+</html>
